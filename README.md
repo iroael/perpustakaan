@@ -33,12 +33,19 @@ cd perpustakaan
 
 # Install dependensi
 composer install
+npm install
 
 # Salin dan konfigurasi file environment
 cp .env.example .env
 php artisan key:generate
 
 # Buat database lalu sesuaikan DB_* di file .env
+DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT=5433           # GANTI PORT sesuai PostgreSQL kamu
+DB_DATABASE=perpustakaan
+DB_USERNAME=postgres
+DB_PASSWORD=secret
 
 # Jalankan migrasi dan seeder (opsional)
 php artisan migrate
